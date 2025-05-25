@@ -17,15 +17,20 @@ company1= Company(name = "R&B Ltd.", founding_year = 2011)
 company2= Company(name = "Momanyi B&G Ltd.", founding_year = 1999) 
 company3= Company(name = "Kiango Kenya Ltd.", founding_year = 1989) 
 company4= Company(name = "Boyani Ltd.", founding_year = 2013) 
+company5= Company(name = "Rose Ltd.", founding_year = 2010) 
 
 
 dev1= Dev(name= "Rose B. Momanyi")
 dev2= Dev(name= "Vincent A. Asumari")
 dev3= Dev(name= "Josiah O. Ombasa")
 dev4= Dev(name= "Diana B. Ondieki")
+dev5= Dev(name= "Cecilia M. Wairimu")
 
-session.add_all([company1, company2, company3, company4, dev1, dev2, dev3, dev4])
+
+
+session.add_all([company1, company2, company3, company4, company5, dev1, dev2, dev3, dev4, dev5])
 session.commit()
+
 
 # Give freebies
 session.add_all([
@@ -34,7 +39,9 @@ session.add_all([
     company2.give_freebie(dev1, "iPad", 3),
     company2.give_freebie(dev2, "Headphones", 4),
     company3.give_freebie(dev3, "Phone", 5),
-    company4.give_freebie(dev4, "Tablet", 6)
+    company4.give_freebie(dev4, "Tablet", 6),
+    company5.give_freebie(dev5, "Stethoscope", 2)
+    
 ])
 session.commit()
 

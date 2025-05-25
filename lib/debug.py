@@ -31,12 +31,19 @@ if __name__ == '__main__':
     session.add_all([company1, company2, company3, company4, dev1, dev2, dev3, dev4])
     session.commit()
 
+
     # Assign freebies to developers from specific companies
     company1.give_freebie(dev1, "Laptop", 1)
     company1.give_freebie(dev2, "smartwatch", 2)
 
     company2.give_freebie(dev1, "notebook", 3)
     company2.give_freebie(dev2, "Headphones", 4)
+
+    
+
+    company3.give_freebie(dev3, "biro", 3)
+
+    company4.give_freebie(dev4, "notebook", 1)
 
     freebies = session.query(Freebie).all()
     for freebie in freebies:
